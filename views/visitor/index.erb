@@ -1,0 +1,23 @@
+<h1>Exhibits currently on show:</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th>Artist</th>
+    <th></th>
+    <th>Category</th>
+  </tr>
+  <% for exhibit in @exhibits %>
+  <tr>
+    <td><a href="/visitor/<%= exhibit.id %>"><%= exhibit.name %></a></td>
+    <td>|</td>
+    <td><a href="/visitor/artist/<%= exhibit.artist_id %>"><%= exhibit.artist.name%></a></td>
+    <td>|</td>
+    <td><a href="/visitor/category/<%= exhibit.category %>"><%= exhibit.category%></a></td>
+
+  </tr>
+  <% end %>
+</table>
+
+<p><a href='/'>Back</a></p>

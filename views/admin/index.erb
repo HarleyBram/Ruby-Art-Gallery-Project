@@ -1,0 +1,27 @@
+<h1>Current Exhibits:</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th>Artist_id</th>
+    <th></th>
+    <th>Category</th>
+    <th></th>
+    <th>Info</th>
+    <th></th>
+  </tr>
+  <% for exhibit in @exhibits %>
+  <tr>
+    <td><%=exhibit.name%></td>
+    <td>|</td>
+    <td><%=exhibit.artist_id%></td>
+    <td>|</td>
+    <td><%=exhibit.category%></td>
+    <td>|</td>
+    <td><%=exhibit.info%></td>
+  </tr>
+  <% end %>
+</table>
+
+<p><a href='/'>Back</a></p>

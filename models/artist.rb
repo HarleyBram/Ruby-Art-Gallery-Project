@@ -1,4 +1,4 @@
-require_relative('../db/sql_runner.sql')
+require_relative('../db/sql_runner')
 
 class Artist
 
@@ -23,8 +23,8 @@ class Artist
     return results.map { |artist| Artist.new( artist ) }
   end
 
-  def delete_all
-    sql = "DELETE * FROM artists"
+  def self.delete_all
+    sql = "DELETE FROM artists"
     SqlRunner.run(sql)
   end
 
@@ -41,6 +41,14 @@ class Artist
     values = [id]
     results = SqlRunner.run( sql, values )
     return Artist.new( results.first )
+  end
+
+
+  def exhibits
+    sql = "SELECT * FROM exhibits WHERE artist_id = $1"
+    value = [@id]
+    result1 = SqlRunner.run(sql, value)
+    result2 = result1.map{|exhibit| Exhibit.new(exhibit)}
   end
 
 end

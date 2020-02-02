@@ -1,10 +1,10 @@
-require_relative('../db/sql_runner.sql')
+require_relative('../db/sql_runner')
 
 class Exhibit
 
-  attr_reader (:id, :name, :artist_id, :category, :info)
+  attr_reader :id, :name, :artist_id, :category, :info
 
-  def initialize
+  def initialize(options)
     @id = options['id'].to_i if options['id']
     @name = options['name']
     @artist_id = options['artist_id'].to_i
@@ -13,7 +13,7 @@ class Exhibit
   end
 
   def save
-    sql = "INSERT INTO exhibits (name, artist, category, info) VALUES ($1, $2, $3, $4) RETURNING id"
+    sql = "INSERT INTO exhibits (name, artist_id, category, info) VALUES ($1, $2, $3, $4) RETURNING id"
     values = [@name, @artist_id, @category, @info]
     result = SqlRunner.run(sql, values)
     @id = result.first['id'].to_i
@@ -26,7 +26,7 @@ class Exhibit
   end
 
   def update()
-    sql = "UPDATE SET(name, artist, category, info) =($1, $2, $3, $4) WHERE id = $5"
+    sql = "UPDATE SET(name, artist_id, category, info) =($1, $2, $3, $4) WHERE id = $5"
     values = [@name, @artist_id, @category, @info, @id]
     SqlRunner.run( sql, values )
   end
@@ -37,11 +37,18 @@ class Exhibit
     return artist
   end
 
-  def delete_all
-    sql = "DELETE * FROM exhibits"
+  def self.delete_all
+    sql = "DELETE FROM exhibits"
     SqlRunner.run(sql)
   end
 
+  def self.find_by_category( category )
+    sql = "SELECT * FROM exhibits
+    WHERE category = $1"
+    values = [category]
+    results = SqlRunner.run( sql, values )
+    return results.map { |exhibit| Exhibit.new( exhibit ) }
+  end
 
   def self.find( id )
     sql = "SELECT * FROM exhibits

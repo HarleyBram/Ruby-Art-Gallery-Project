@@ -1,0 +1,7 @@
+<h2>Works in <%=@exhibit.first.category%></h2>
+
+<%for exhibit in @exhibit%>
+<p><a href="/visitor/<%=exhibit.id%>"><%=exhibit.name %></a></p>
+  <% end %>
+
+<p><a href='/visitor'>Back</a></p>
