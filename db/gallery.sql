@@ -10,7 +10,7 @@ CREATE TABLE artists(
 CREATE TABLE exhibits(
   id SERIAL PRIMARY KEY,
   name VARCHAR(255),
-  artist_id INT REFERENCES artists(id),
+  artist_id INT REFERENCES artists(id) ON DELETE CASCADE,
   category VARCHAR(255),
   info VARCHAR(255)
 );

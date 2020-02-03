@@ -1,0 +1,36 @@
+<h2>Add Exhibit</h2>
+
+<form action="/admin/add" method="post">
+  <start class="form-wrapper">
+    <div class="form-el">
+      <label for="name">Name</label>
+      <input type="text" name="name" id = "name"/>
+    </div>
+
+    <div class="form-el">
+      <label for="artist">Artist</label>
+      <select name="artist_id">
+        <%for artist in @artists%>
+        <option value= <%=artist.id%> ><%=artist.name%></option>
+        <%end%>
+      </select>
+    </div>
+
+    <div class="form-el">
+      <label for="category">Category</label>
+      <input type="text" name="category" id = "category"/>
+    </div>
+
+    <div class="form-el">
+      <label for="info">Info</label>
+      <input type="text" name="info" id = "info"/>
+    </div>
+
+    <div class="form-el">
+      <input type="submit" value="Add Exhibit"</>
+    </div>
+  </start>
+</form>
+
+
+<p><a href='/admin'>Back</a></p>

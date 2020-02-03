@@ -20,8 +20,16 @@
     <td><%=exhibit.category%></td>
     <td>|</td>
     <td><%=exhibit.info%></td>
+    <td>|</td>
+    <td><a href="/admin/edit/<%= exhibit.id %>">Edit</a></td>
   </tr>
   <% end %>
 </table>
+
+<h4><a href="/admin/add">Add an Exhibit</a></h4>
+
+<h4><a href="/admin/artists">List of Artists</a></h4>
+
+
 
 <p><a href='/'>Back</a></p>

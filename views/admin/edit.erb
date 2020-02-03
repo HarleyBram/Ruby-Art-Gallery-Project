@@ -1,0 +1,37 @@
+<h2>Edit <%=@exhibit.name%></h2>
+
+<form action="/admin/edit/<%=@exhibit.id%>" method="post">
+  <start class="form-wrapper">
+    <div class="form-el">
+      <label for="name">Name</label>
+      <input type="text" name="name" id = "name" value="<%=@exhibit.name%>"/>
+    </div>
+
+    <div class="form-el">
+      <label for="artist">Artist</label>
+      <select name="artist_id">
+        <%for artist in @artists%>
+        <option value= <%=artist.id%> ><%=artist.name%></option>
+        <%end%>
+      </select>
+    </div>
+
+    <div class="form-el">
+      <label for="category">Category</label>
+      <input type="text" name="category" id = "category" value="<%=@exhibit.category%>"/>
+    </div>
+
+    <div class="form-el">
+      <label for="info">Info</label>
+      <input type="text" name="info" id = "info" value="<%=@exhibit.info%>"/>
+    </div>
+
+    <div class="form-el">
+      <input type="submit" value="Save Changes"</>
+    </div>
+  </start>
+</form>
+
+<p><a href="/admin">Delete Exhibit</a></p>
+
+<p><a href='/admin'>Back</a></p>

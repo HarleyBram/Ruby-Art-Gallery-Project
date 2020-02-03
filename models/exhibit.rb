@@ -19,17 +19,24 @@ class Exhibit
     @id = result.first['id'].to_i
   end
 
+  def update
+    sql = "UPDATE exhibits SET (name, artist_id, category, info) = ($1, $2, $3, $4) WHERE id = $5"
+    values = [@name, @artist_id, @category, @info, @id]
+    SqlRunner.run(sql, values)
+  end
+
+
   def self.all()
     sql = "SELECT * FROM exhibits"
     results = SqlRunner.run( sql )
     return results.map { |exhibit| Exhibit.new( exhibit ) }
   end
 
-  def update()
-    sql = "UPDATE SET(name, artist_id, category, info) =($1, $2, $3, $4) WHERE id = $5"
-    values = [@name, @artist_id, @category, @info, @id]
-    SqlRunner.run( sql, values )
-  end
+  # def update()
+  #   sql = "UPDATE SET(name, artist_id, category, info) =($1, $2, $3, $4) WHERE id = $5"
+  #   values = [@name, @artist_id, @category, @info, @id]
+  #   SqlRunner.run( sql, values )
+  # end
 
 
   def artist

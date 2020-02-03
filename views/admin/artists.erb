@@ -1,0 +1,16 @@
+<h1>Artists</h1>
+
+
+<% for artist in @artists %>
+<table>
+  <tr>
+    <td><%=artist.name%></td>
+    <td>|</td>
+    <td><a href="/admin/delete">Delete Artist</a></td>
+  </tr>
+  <%end%>
+</table>
+
+<p><a href="/admin/add_artist">Add an Artist</a></p>
+
+<p><a href='/admin'>Back</a></p>
