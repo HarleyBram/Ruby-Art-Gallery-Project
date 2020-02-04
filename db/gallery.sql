@@ -12,5 +12,6 @@ CREATE TABLE exhibits(
   name VARCHAR(255),
   artist_id INT REFERENCES artists(id) ON DELETE SET NULL,
   category VARCHAR(255),
-  info VARCHAR(255)
+  info VARCHAR(255),
+  image_path VARCHAR(255)
 );

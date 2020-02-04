@@ -2,7 +2,7 @@ require_relative('../db/sql_runner')
 
 class Exhibit
 
-  attr_reader :id, :name, :artist_id, :category, :info
+  attr_reader :id, :name, :artist_id, :category, :info, :image_path
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
@@ -10,17 +10,18 @@ class Exhibit
     @artist_id = options['artist_id'].to_i
     @category = options['category']
     @info = options['info']
+    @image_path = options['image_path']
   end
 
   def save
-    sql = "INSERT INTO exhibits (name, artist_id, category, info) VALUES ($1, $2, $3, $4) RETURNING id"
-    values = [@name, @artist_id, @category, @info]
+    sql = "INSERT INTO exhibits (name, artist_id, category, info, image_path) VALUES ($1, $2, $3, $4, $5) RETURNING id"
+    values = [@name, @artist_id, @category, @info, @image_path]
     result = SqlRunner.run(sql, values)
     @id = result.first['id'].to_i
   end
 
   def update
-    sql = "UPDATE exhibits SET (name, artist_id, category, info) = ($1, $2, $3, $4) WHERE id = $5"
+    sql = "UPDATE exhibits SET (name, artist_id, category, info) = ($1, $2, $3, $4, $5) WHERE id = $6"
     values = [@name, @artist_id, @category, @info, @id]
     SqlRunner.run(sql, values)
   end

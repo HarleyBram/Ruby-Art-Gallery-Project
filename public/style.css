@@ -19,7 +19,7 @@ main {
   max-width: 600px;
   margin: 0px auto;
   height: 100vh;
-  
+
 
 }
 
@@ -77,6 +77,11 @@ form {
 p {
   text-align: center;
   font-family: Helvetica;
+}
 
-
+.exhibit-img {
+  object-fit: contain;
+  /* height: 500px;
+  width: 500px; */
+object-fit: scale-down;
 }

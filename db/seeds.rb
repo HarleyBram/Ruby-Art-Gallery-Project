@@ -51,7 +51,8 @@ exhibit1 = Exhibit.new({
 'name' => 'Christ of Saint John of the Cross',
 'artist_id' => artist1.id,
 'category' => 'Surrealist',
-'info' => 'info'
+'info' => 'info',
+'image_path' => '/Kelvingrove/Christ_of_Saint_John_of_the_Cross.jpg'
 })
 exhibit1.save
 
@@ -59,7 +60,8 @@ exhibit2 = Exhibit.new({
 'name' => 'Interior - The Orange Blind',
 'artist_id' => artist2.id,
 'category' => 'Scottish Colourist',
-'info' => 'info'
+'info' => 'info',
+'image_path' => '/Kelvingrove/Interior-The_Orange_Blind.jpg'
 })
 exhibit2.save
 
@@ -67,7 +69,8 @@ exhibit3 = Exhibit.new({
 'name' => 'La Faruk Madonna',
 'artist_id' => artist3.id,
 'category' => 'Religious Art',
-'info' => 'info'
+'info' => 'info',
+'image_path' => '/Kelvingrove/lafaruk.jpg'
 })
 exhibit3.save
 
@@ -75,15 +78,17 @@ exhibit4 = Exhibit.new({
 'name' => 'Vétheuil',
 'artist_id' => artist4.id,
 'category' => 'Impressionism',
-'info' => 'info'
+'info' => 'info',
+'image_path' => '/Kelvingrove/vetheuil.jpg'
 })
 exhibit4.save
 
 exhibit5 = Exhibit.new({
-'name' => 'The McNab',
+'name' => 'The MacNab',
 'artist_id' => artist5.id,
 'category' => 'Portrait painting',
-'info' => 'info'
+'info' => 'info',
+'image_path' => '/Kelvingrove/macnab.jpg'
 })
 exhibit5.save
 
@@ -91,7 +96,8 @@ exhibit6 = Exhibit.new({
 'name' => 'The Wassail',
 'artist_id' => artist6.id,
 'category' => 'Expressionism',
-'info' => 'info'
+'info' => 'info',
+'image_path' => '/Kelvingrove/wassail.jpg'
 })
 exhibit6.save
 
