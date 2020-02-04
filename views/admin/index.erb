@@ -8,8 +8,6 @@
     <th></th>
     <th>Category</th>
     <th></th>
-    <th>Info</th>
-    <th></th>
   </tr>
   <% for exhibit in @exhibits %>
   <tr>
@@ -18,8 +16,6 @@
     <td><%=exhibit.artist_id%></td>
     <td>|</td>
     <td><%=exhibit.category%></td>
-    <td>|</td>
-    <td><%=exhibit.info%></td>
     <td>|</td>
     <td><a href="/admin/edit/<%= exhibit.id %>">Edit</a></td>
   </tr>

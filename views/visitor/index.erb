@@ -12,12 +12,12 @@
   <tr>
     <td><a href="/visitor/<%= exhibit.id %>"><%= exhibit.name %></a></td>
     <td>|</td>
-    <td><a href="/visitor/artist/<%= exhibit.artist_id %>"><%= exhibit.artist.name%></a></td>
+    <td><a href="/visitor/artist/<%=exhibit.artist_id %>"><%= exhibit.artist.name%></a></td>
     <td>|</td>
     <td><a href="/visitor/category/<%= exhibit.category %>"><%= exhibit.category%></a></td>
-
+<%end%>
   </tr>
-  <% end %>
+
 </table>
 
 <p><a href='/'>Back</a></p>

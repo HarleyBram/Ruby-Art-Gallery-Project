@@ -2,9 +2,11 @@ require('sinatra')
 require('sinatra/contrib/all')
 require_relative('../models/exhibit.rb')
 also_reload('../models/*')
+require('pry')
 
 get '/visitor' do
   @exhibits = Exhibit.all
+  # binding.pry
   erb(:'visitor/index')
 end
 

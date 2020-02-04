@@ -2,7 +2,7 @@
 
 <p><%=@artist.info%></p>
 
-<h3>Works by this artist:</h3>
+<h4>Works by this artist:</h4>
 <%for exhibit in @artist.exhibits %>
 <p><a href="/visitor/<%=exhibit.id%>"><%=exhibit.name %></a></p>
   <% end %>

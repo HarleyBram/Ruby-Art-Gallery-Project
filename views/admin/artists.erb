@@ -6,7 +6,9 @@
   <tr>
     <td><%=artist.name%></td>
     <td>|</td>
-    <td><a href="/admin/artists/delete/<%=artist.id%>">Delete Artist</a></td>
+    <td><form action="/admin/artists/delete/<%=artist.id%>" method="post">
+      <input type="Submit" value="Delete Artist">
+    </form></td>
   </tr>
   <%end%>
 </table>

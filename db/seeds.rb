@@ -41,11 +41,16 @@ artist6 = Artist.new({
   })
 artist6.save
 
+artist7 = Artist.new({
+  'name' => 'Anon',
+  'info' => "We don't know who the artist is"
+  })
+artist7.save
 
 exhibit1 = Exhibit.new({
 'name' => 'Christ of Saint John of the Cross',
 'artist_id' => artist1.id,
-'category' => 'surrealist',
+'category' => 'Surrealist',
 'info' => 'info'
 })
 exhibit1.save
@@ -53,7 +58,7 @@ exhibit1.save
 exhibit2 = Exhibit.new({
 'name' => 'Interior - The Orange Blind',
 'artist_id' => artist2.id,
-'category' => 'surrealist',
+'category' => 'Scottish Colourist',
 'info' => 'info'
 })
 exhibit2.save
@@ -61,7 +66,7 @@ exhibit2.save
 exhibit3 = Exhibit.new({
 'name' => 'La Faruk Madonna',
 'artist_id' => artist3.id,
-'category' => 'surrealist',
+'category' => 'Religious Art',
 'info' => 'info'
 })
 exhibit3.save
@@ -69,7 +74,7 @@ exhibit3.save
 exhibit4 = Exhibit.new({
 'name' => 'Vétheuil',
 'artist_id' => artist4.id,
-'category' => 'impressionism',
+'category' => 'Impressionism',
 'info' => 'info'
 })
 exhibit4.save
@@ -77,7 +82,7 @@ exhibit4.save
 exhibit5 = Exhibit.new({
 'name' => 'The McNab',
 'artist_id' => artist5.id,
-'category' => 'surrealist',
+'category' => 'Portrait painting',
 'info' => 'info'
 })
 exhibit5.save
@@ -85,7 +90,7 @@ exhibit5.save
 exhibit6 = Exhibit.new({
 'name' => 'The Wassail',
 'artist_id' => artist6.id,
-'category' => 'surrealist',
+'category' => 'Expressionism',
 'info' => 'info'
 })
 exhibit6.save

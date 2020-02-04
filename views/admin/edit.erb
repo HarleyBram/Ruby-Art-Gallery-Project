@@ -32,6 +32,7 @@
   </start>
 </form>
 
-<p><a href="/admin/delete/<%=@exhibit.id%>">Delete Exhibit</a></p>
+<p><form action="/admin/delete/<%=@exhibit.id%>" method="post">
+  <input type="Submit" value="Delete Exhibit"></p>
 
 <p><a href='/admin'>Back</a></p>

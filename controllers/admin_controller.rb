@@ -38,7 +38,7 @@ end
 post '/admin/add_artist' do
   artist = Artist.new(params)
   artist.save
-  redirect to '/admin'
+  redirect to '/admin/artists'
 end
 
 # gets the edit exhibit form
@@ -59,14 +59,13 @@ end
 
 # delete exhibit
 post '/admin/delete/:id' do
-  exhibit = Exhibit.find(params['id'])
-  exhibit.delete
+  p "heyyyyy"
+  Exhibit.delete(params['id'])
   redirect to '/admin'
 end
 
 # delete artist
 post '/admin/artists/delete/:id' do
-  artist = Artist.find(params['id'])
-  artist.delete
+  Artist.delete(params['id'])
   redirect to '/admin/artists'
 end
