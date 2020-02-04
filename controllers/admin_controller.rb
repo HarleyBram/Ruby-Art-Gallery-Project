@@ -4,16 +4,19 @@ require('pry')
 require_relative('../models/exhibit.rb')
 also_reload('../models/*')
 
+# gets a list of exhibits
 get '/admin' do
   @exhibits = Exhibit.all
   erb(:'admin/index')
 end
 
+# gets a list of artists
 get '/admin/artists' do
   @artists = Artist.all
   erb(:'admin/artists')
 end
 
+# adds an exhibit
 get '/admin/add'do
 @artists = Artist.all
 erb(:'admin/add')
@@ -26,8 +29,16 @@ exhibit.save
 redirect to '/admin'
 end
 
-get 'admin/add_artist' do
-  erb(:'/admin/add_artist')
+# gets the add artist page
+get '/admin/add_artist' do
+  erb(:'admin/add_artist')
+end
+
+# posts the add artist page results to db
+post '/admin/add_artist' do
+  artist = Artist.new(params)
+  artist.save
+  redirect to '/admin'
 end
 
 # gets the edit exhibit form
@@ -44,5 +55,18 @@ post '/admin/edit/:id' do
   # save changes to DB
   exhibit.update
   redirect to '/admin'
+end
 
+# delete exhibit
+post '/admin/delete/:id' do
+  exhibit = Exhibit.find(params['id'])
+  exhibit.delete
+  redirect to '/admin'
+end
+
+# delete artist
+post '/admin/artists/delete/:id' do
+  artist = Artist.find(params['id'])
+  artist.delete
+  redirect to '/admin/artists'
 end
