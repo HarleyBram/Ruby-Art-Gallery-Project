@@ -7,37 +7,37 @@ Artist.delete_all()
 
 artist1 = Artist.new({
   'name' => 'Salvador Dali',
-  'info' => 'info'
+  'info' => 'Salvador Dali was a Spanish Surrealist artist.'
   })
 artist1.save
 
 artist2 = Artist.new({
   'name' => 'FCB Cadell',
-  'info' => 'info'
+  'info' => 'Francis Campbell Boileau Cadell was a Scottish Colourist painter.'
   })
 artist2.save
 
 artist3 = Artist.new({
   'name' => 'Giuseppe Baldan',
-  'info' => 'info'
+  'info' => 'Giuseppe Baldan was an Italian soldier in WW2 who spent his time as a POW painting.'
   })
 artist3.save
 
 artist4 = Artist.new({
   'name' => 'Claude Monet',
-  'info' => 'info'
+  'info' => 'Claude Monet was a French painter and founder of the Impressionist art movement'
   })
 artist4.save
 
 artist5 = Artist.new({
   'name' => 'Sir Henry Raeburn',
-  'info' => 'info'
+  'info' => 'Henry Raeburn was a Scottish portrait painter.'
   })
 artist5.save
 
 artist6 = Artist.new({
   'name' => 'Charles Rennie Mackintosh',
-  'info' => 'info'
+  'info' => 'Charles Mackintosh was a popular Scottish architect in the early 20th century.'
   })
 artist6.save
 

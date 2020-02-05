@@ -1,8 +1,12 @@
+
 <h2><%=@exhibit.name%></h2>
 <h3>By <%=@exhibit.artist.name%></h3>
 
 <p><%=@exhibit.info%></p>
-
-<img src=<%=@exhibit.image_path%> alt="A picture of the exhibit" class="exhibit-img"/>
+<div class="container">
+<nav class="items">
+  <img src=<%=@exhibit.image_path%> alt="A picture of the exhibit" class="exhibit-img"/>
+</nav>
+</div>
 
 <p><a href='/visitor'>Back</a></p>

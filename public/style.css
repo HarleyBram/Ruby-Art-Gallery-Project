@@ -25,6 +25,12 @@ main {
 
 input{
   text-transform: capitalize;
+  background-color: white;
+}
+
+.drop-down {
+  background-color: white;
+  
 }
 
 h1 {
@@ -71,7 +77,6 @@ form {
     margin: auto;
   text-align: center;
   font-family: Helvetica;
-
 }
 
 p {
@@ -84,4 +89,12 @@ p {
   /* height: 500px;
   width: 500px; */
 object-fit: scale-down;
+max-width: 600px;
+max-height: 400px;
+margin:auto;
+}
+
+.container {
+  display: flex;
+justify-content: center;
 }

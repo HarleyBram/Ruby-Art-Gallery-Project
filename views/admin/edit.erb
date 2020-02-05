@@ -9,7 +9,7 @@
 
     <div class="form-el">
       <label for="artist">Artist</label>
-      <select name="artist_id">
+      <select name="artist_id" class="drop-down">
         <%for artist in @artists%>
         <option value= <%=artist.id%> ><%=artist.name%></option>
         <%end%>
